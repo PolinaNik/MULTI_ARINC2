@@ -1,0 +1,38 @@
+2021-08-16 11:59:24,663 _____НАЧАЛО_____Разбор файла ARINC /home/polina/Desktop/MULTI_ARINC/Файлы_для_парсинга/arinc_files/GKOVD_DV2108Av15.txt и /home/polina/Desktop/MULTI_ARINC/Файлы_для_парсинга/arinc_files/GKOVD_DV2108Bv15.txt
+2021-08-16 11:59:30,767 Найдено 13504 точек в файле ARINC
+2021-08-16 11:59:31,390 Из 13504 точек ARINC, только 2061 в зоне ответственности
+2021-08-16 11:59:31,478 Найдено 2103 точек в базе данных
+2021-08-16 11:59:31,482 Найдено 1095 точек на кириллице и 937 точек на латинице в базе данных
+2021-08-16 11:59:31,522 Из базы нужно удалить 1095 точек на кириллице и 51 старых точек на латинице. Список старых точек на латинице: ['ABITA', 'ABLAM', 'ADEPI', 'AJARA', 'ASMOL', 'ASNEN', 'BD', 'BEPEL', 'BUGIS', 'DIKUT', 'DILUN', 'DITSA', 'GANMO', 'GE', 'GINOL', 'GOGNI', 'GOLIS', 'GOTKA', 'HAMUN', 'IDREM', 'INRUM', 'KUMAP', 'KUMIP', 'KUNAD', 'LANEP', 'LEBNA', 'LITBI', 'LOLSU', 'LUNED', 'LUРAT', 'MAKIS', 'NASEL', 'NASOD', 'NATEK', 'NEDAL', 'NILOM', 'OTRUN', 'RASON', 'RENSI', 'RINZO', 'RIPAG', 'RODMA', 'SONID', 'SUBOB', 'TIGSO', 'TIPOT', 'TK', 'TUSUM', 'UDELU', 'UNETA', 'UPODA']
+2021-08-16 11:59:31,815 В базу нужно добавить 1169 новых точек из документа ARINC
+2021-08-16 11:59:47,171 Найдено 3685 трасс в документе ARINC, только 402 находятся в зоне ответсвенности
+2021-09-01 11:24:25,644 _____НАЧАЛО_____Разбор файла ARINC /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Av15.txt и /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Bv15.txt
+2021-09-01 11:24:31,660 Найдено 13504 точек в файле ARINC
+2021-09-01 11:24:32,295 Из 13504 точек ARINC, только 2061 в зоне ответственности
+2021-09-01 11:24:32,384 Найдено 2103 точек в базе данных
+2021-09-01 11:24:32,389 Найдено 1095 точек на кириллице и 937 точек на латинице в базе данных
+2021-09-01 11:24:32,428 Из базы нужно удалить 1095 точек на кириллице и 51 старых точек на латинице. Список старых точек на латинице: ['ABITA', 'ABLAM', 'ADEPI', 'AJARA', 'ASMOL', 'ASNEN', 'BD', 'BEPEL', 'BUGIS', 'DIKUT', 'DILUN', 'DITSA', 'GANMO', 'GE', 'GINOL', 'GOGNI', 'GOLIS', 'GOTKA', 'HAMUN', 'IDREM', 'INRUM', 'KUMAP', 'KUMIP', 'KUNAD', 'LANEP', 'LEBNA', 'LITBI', 'LOLSU', 'LUNED', 'LUРAT', 'MAKIS', 'NASEL', 'NASOD', 'NATEK', 'NEDAL', 'NILOM', 'OTRUN', 'RASON', 'RENSI', 'RINZO', 'RIPAG', 'RODMA', 'SONID', 'SUBOB', 'TIGSO', 'TIPOT', 'TK', 'TUSUM', 'UDELU', 'UNETA', 'UPODA']
+2021-09-01 11:24:32,699 В базу нужно добавить 1169 новых точек из документа ARINC
+2021-09-01 11:24:47,700 Найдено 3685 трасс в документе ARINC, только 402 находятся в зоне ответсвенности
+2021-09-01 11:25:43,465 _____НАЧАЛО_____Разбор файла ARINC /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Av15.txt и /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Bv15.txt
+2021-09-01 11:25:49,542 Найдено 13504 точек в файле ARINC
+2021-09-01 11:25:50,121 Из 13504 точек ARINC, только 2061 в зоне ответственности
+2021-09-01 11:25:50,209 Найдено 2103 точек в базе данных
+2021-09-01 11:25:50,213 Найдено 1095 точек на кириллице и 937 точек на латинице в базе данных
+2021-09-01 11:25:50,253 Из базы нужно удалить 1095 точек на кириллице и 51 старых точек на латинице. Список старых точек на латинице: ['ABITA', 'ABLAM', 'ADEPI', 'AJARA', 'ASMOL', 'ASNEN', 'BD', 'BEPEL', 'BUGIS', 'DIKUT', 'DILUN', 'DITSA', 'GANMO', 'GE', 'GINOL', 'GOGNI', 'GOLIS', 'GOTKA', 'HAMUN', 'IDREM', 'INRUM', 'KUMAP', 'KUMIP', 'KUNAD', 'LANEP', 'LEBNA', 'LITBI', 'LOLSU', 'LUNED', 'LUРAT', 'MAKIS', 'NASEL', 'NASOD', 'NATEK', 'NEDAL', 'NILOM', 'OTRUN', 'RASON', 'RENSI', 'RINZO', 'RIPAG', 'RODMA', 'SONID', 'SUBOB', 'TIGSO', 'TIPOT', 'TK', 'TUSUM', 'UDELU', 'UNETA', 'UPODA']
+2021-09-01 11:25:50,525 В базу нужно добавить 1169 новых точек из документа ARINC
+2021-09-01 11:26:05,330 Найдено 3685 трасс в документе ARINC, только 402 находятся в зоне ответсвенности
+2021-09-01 11:46:56,249 _____НАЧАЛО_____Разбор файла ARINC /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Av15.txt и /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Bv15.txt
+2021-09-01 11:47:02,278 Найдено 13504 точек в файле ARINC
+2021-09-01 11:47:02,854 Из 13504 точек ARINC, только 2061 в зоне ответственности
+2021-09-01 11:47:02,939 Найдено 2103 точек в базе данных
+2021-09-01 11:47:02,943 Найдено 1095 точек на кириллице и 937 точек на латинице в базе данных
+2021-09-01 11:47:03,252 В базу нужно добавить 1169 новых точек из документа ARINC
+2021-09-01 11:47:18,057 Найдено 3685 трасс в документе ARINC, только 402 находятся в зоне ответсвенности
+2021-09-01 11:50:16,092 _____НАЧАЛО_____Разбор файла ARINC /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Av15.txt и /home/polina/PycharmProjects/MULTI_ARINC/ARINC and dump/GKOVD_DV2108Bv15.txt
+2021-09-01 11:50:22,122 Найдено 13504 точек в файле ARINC
+2021-09-01 11:50:22,703 Из 13504 точек ARINC, только 2061 в зоне ответственности
+2021-09-01 11:50:22,789 Найдено 2103 точек в базе данных
+2021-09-01 11:50:22,793 Найдено 1095 точек на кириллице и 937 точек на латинице в базе данных
+2021-09-01 11:50:23,099 В базу нужно добавить 1169 новых точек из документа ARINC
+2021-09-01 11:50:37,940 Найдено 3685 трасс в документе ARINC, только 402 находятся в зоне ответсвенности
