@@ -292,7 +292,7 @@ trass_all = list(write_trass(pairs))
 
 trass_info = '0 Трассы\nЛиний 227; ПОДов 0; дуг 0; окружностей 0\nЛинии(индекс 2): всего 227\nID(2) начало конец тип цвет\n'
 
-RZ_info = open('samples/sample_RZ.txt', 'r', encoding='utf-8')
+RZ_info = open('./app/samples/sample_RZ.txt', 'r', encoding='utf-8')
 RZ_info = RZ_info.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'w', encoding='cp1251') as one:
@@ -324,21 +324,21 @@ with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     for i in polygon_all:
         one.write('%s\n' % i)
 
-aero_info = open('samples/sample_aero.txt', 'r', encoding='utf-8')
+aero_info = open('./app/samples/sample_aero.txt', 'r', encoding='utf-8')
 aero_info = aero_info.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
     for i in aero_info:
         one.write(i)
 
-VC_info = open('samples/sample_VC.txt', 'r')
+VC_info = open('./app/samples/sample_VC.txt', 'r')
 VC_info = VC_info.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
     for i in VC_info:
         one.write(i)
 
-routes_info = open('samples/sample_routes.txt', 'r')
+routes_info = open('./app/samples/sample_routes.txt', 'r')
 routes_info = routes_info.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
@@ -465,28 +465,28 @@ with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
 #     for i in pdz_coords:
 #         one.write('%s\n' %i)
 
-RZ_points = open('samples/sample_RZ_points.txt', 'r')
+RZ_points = open('./app/samples/sample_RZ_points.txt', 'r')
 RZ_points = RZ_points.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
     for i in RZ_points:
         one.write(i)
 
-aero_points = open('samples/sample_aero_points.txt', 'r')
+aero_points = open('./app/samples/sample_aero_points.txt', 'r')
 aero_points = aero_points.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
     for i in aero_points:
         one.write(i)
 
-VC_points = open('samples/sample_VC_points.txt', 'r')
+VC_points = open('./app/samples/sample_VC_points.txt', 'r')
 VC_points = VC_points.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
     for i in VC_points:
         one.write(i)
 
-routes_points = open('samples/sample_routes_points.txt', 'r')
+routes_points = open('./app/samples/sample_routes_points.txt', 'r')
 routes_points = routes_points.readlines()
 
 with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:

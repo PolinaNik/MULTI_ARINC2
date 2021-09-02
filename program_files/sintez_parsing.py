@@ -1357,7 +1357,7 @@ with open('/multi_arinc/1.SINTEZ/2.SLD_картография/HEIGHT_MVL_AUTO.SL
         output3.write("%s\n" % item)
 
 # Находим зональные трассы
-zon = open('samples/ROUTES_ZON_DOP.SLD', 'r', encoding='koi8-r')
+zon = open('./app/samples/ROUTES_ZON_DOP.SLD', 'r', encoding='koi8-r')
 zon = zon.readlines()
 
 zones = []

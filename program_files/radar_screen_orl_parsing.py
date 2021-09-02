@@ -140,7 +140,7 @@ for i in range(len(routes_add)):
     new = ''.join(line)
     test.append(new)
 
-sample = open('samples/sample_radar.mp', 'r')
+sample = open('./app/samples/sample_radar.mp', 'r')
 sample = sample.readlines()
 
 now = datetime.datetime.now()
