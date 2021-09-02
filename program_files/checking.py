@@ -2,29 +2,19 @@
 
 from itertools import groupby
 from itertools import chain
-from tkinter import filedialog
-from tkinter import messagebox
-from tkinter import *
 import datetime
 import os
-
 import modules
+import re
 
-
-# Создаем окно приложения
-root = Tk()
-root.withdraw()
-
-root.title("Проверка ARINC")
-root.filename = filedialog.askopenfilename(initialdir="/multi_arinc",
-                                           title="ВЫБЕРИТЕ ARINC для международных трасс")
+filename = input('Введите путь до ARINC международных трасс: ')
 begin_time = datetime.datetime.today()
 
-pat = re.compile(r'(\d+)+?')
-version = pat.search(root.filename).group()
+try:
+    text = open('%s' % filename, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до ARINC международных трасс")
 
-# Выбор нужного файла
-text = open('%s' % root.filename, 'r', encoding='utf-8').readlines()
 all_points = list(modules.get_points(text))
 
 """Выбор только имени и коррдинаты точки, за исключением точки с координатами Хабаровска 
@@ -147,14 +137,9 @@ for x in delete_rows:
         delete_rows2.append(lst)
 
 text_mes = 'В трассе: %s в середине маршрута нарушена нумерация точек.\nНеобходимо удалить часть маршрута: %s' % (
-res, delete_rows2)
-
-head, tail = os.path.split(root.filename)
+    res, delete_rows2)
 
 if not res:
-    messagebox.showinfo(title='Результат проверки %s' % tail,
-                        message='Проблем с нумерацией нет.\nМожно начинать разбор')
+    print('Проблем с нумерацией нет. Можно начинать разбор')
 else:
-    messagebox.showerror(title='Результат проверки %s' % tail, message=text_mes)
-
-root.destroy()
+    print(text_mes)

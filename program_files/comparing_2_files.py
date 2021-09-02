@@ -1,21 +1,28 @@
-from tkinter import filedialog
-from tkinter import *
 import datetime
 import modules
 
 # Создаем окно приложения
-root = Tk()
-root.withdraw()
-root.title("Парсинг для SINTEZ")
-root.filename1 = filedialog.askopenfilename(initialdir="/multi_arinc", title="ВЫБЕРИТЕ ARINC 1")
-root.filename2 = filedialog.askopenfilename(initialdir="/multi_arinc", title="ВЫБЕРИТЕ ARINC 2")
-root.filename3 = filedialog.askopenfilename(initialdir="/multi_arinc", title="ВЫБЕРИТЕ mysqldump")
+
+filename1 = input('Введите путь до старого ARINC международных трасс: ')
+filename2 = input('Введите путь до нового ARINC международных трасс: ')
+filename3 = input('Введите путь до дампа базы KHABAR_ANI: ')
 begin_time = datetime.datetime.today()
 
 # Выбор нужного файла
-text_old = open('%s' % root.filename1, 'r', encoding='utf-8').readlines()
-text_new = open('%s' % root.filename2, 'r', encoding='utf-8').readlines()
-text_dump = open('%s' % root.filename3, 'r', encoding='utf-8').readlines()
+try:
+    text_old = open('%s' % filename1, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до старого ARINC международных трасс")
+
+try:
+    text_new = open('%s' % filename2, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до нового ARINC международных трасс")
+
+try:
+    text_dump = open('%s' % filename3, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до дампа базы KHABAR_ANI")
 
 all_points_old = list(modules.get_points(text_old))
 all_points_new = list(modules.get_points(text_new))

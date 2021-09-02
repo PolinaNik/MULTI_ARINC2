@@ -2,31 +2,27 @@
 
 from itertools import groupby
 from itertools import chain
-from tkinter import filedialog
-from tkinter import *
 import datetime
 import modules
 from pathlib import Path
-
+import re
 
 Path("/multi_arinc/3.ORL-A").mkdir(parents=True, exist_ok=True)
 
-# Создаем окно приложения
-root = Tk()
-root.withdraw()
-
-root.title("Парсинг для ОРЛ-А")
-root.filename = filedialog.askopenfilename(initialdir="/multi_arinc",
-                                           title="ВЫБЕРИТЕ ARINC для международных трасс")
+filename = input('Введите путь до ARINC международных трасс: ')
 begin_time = datetime.datetime.today()
 
-print('_____НАЧАЛО_____Разбор файла ARINC %s' % root.filename)
+print('_____НАЧАЛО_____Разбор файла ARINC %s' % filename)
 
 pat = re.compile(r'(\d+)+?')
-version = pat.search(root.filename).group()
+version = pat.search(filename).group()
 
 # Выбор нужного файла
-text = open('%s' % root.filename, 'r', encoding='utf-8').readlines()
+try:
+    text = open('%s' % filename, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до ARINC международных трасс")
+
 all_points = list(modules.get_points(text))
 
 """Выбор только имени и коррдинаты точки, за исключением точки с координатами Хабаровска 
@@ -183,5 +179,3 @@ with open('%s%s' % ('/multi_arinc/3.ORL-A/', filename), 'a+') as r:
         r.write('%s\n' % item)
 
 print('Файл с картографией для ОРЛ-А сформирован')
-
-root.destroy()

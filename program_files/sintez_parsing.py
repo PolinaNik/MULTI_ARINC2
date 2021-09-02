@@ -1,12 +1,11 @@
 """Скрипт парсинга для СИНТЕЗА"""
+print('Скрипт парсинга для СИНТЕЗА')
 
-import os
+import re
 import math
 import logging
 from itertools import groupby
 from itertools import chain
-from tkinter import filedialog
-from tkinter import *
 import transliterate
 import xlwt
 import datetime
@@ -14,7 +13,6 @@ import copy
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
 import modules
-import values
 import operator
 
 path = '/multi_arinc/config.py'
@@ -30,28 +28,34 @@ Path("/multi_arinc/1.SINTEZ/3.Таблицы").mkdir(parents=True, exist_ok=True
 # Пишем в лог
 logging.basicConfig(format='%(asctime)s %(message)s', filename='/multi_arinc/1.SINTEZ/arinc.log', filemode='a')
 
-# Создаем окно приложения
-root = Tk()
-root.withdraw()
-root.title("Парсинг для SINTEZ")
-root.filename1 = filedialog.askopenfilename(initialdir="/multi_arinc",
-                                            title="ВЫБЕРИТЕ ARINC для международных трасс")
-root.filename2 = filedialog.askopenfilename(initialdir="/multi_arinc",
-                                            title="ВЫБЕРИТЕ ARINC для МВЛьных трасс трасс")
-root.filename3 = filedialog.askopenfilename(initialdir="/multi_arinc", title="ВЫБЕРИТЕ mysqldump")
+filename1 = input('Введите путь до ARINC международных трасс: ')
+filename2 = input('Введите путь до ARINC для МВЛьных трасс: ')
+filename3 = input('Введите путь до дампа базы KHABAR_ANI: ')
+Name = input('Введите вашу фамилию на латинице: ')
+
 begin_time = datetime.datetime.today()
 
 pat = re.compile(r'(\d+)+?')
-version = pat.search(root.filename1).group()
+version = pat.search(filename1).group()
 
 # Выбор нужного файла
-text1 = open('%s' % root.filename1, 'r', encoding='utf-8').readlines()
-text2 = open('%s' % root.filename2, 'r', encoding='utf-8').readlines()
-text3 = open('%s' % root.filename3, 'r', encoding='utf-8').readlines()
+try:
+    text1 = open('%s' % filename1, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до ARINC международных трасс")
 
-logging.warning('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (root.filename1, root.filename2))
-print('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (root.filename1, root.filename2))
+try:
+    text2 = open('%s' % filename2, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до ARINC МВЛьных трасс")
 
+try:
+    text3 = open('%s' % filename3, 'r', encoding='utf-8').readlines()
+except:
+    print("Неверно указан путь до дампа базы KHABAR_ANI")
+
+logging.warning('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (filename1, filename2))
+print('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (filename1, filename2))
 
 # Поиск всех точек в файле ARINC
 all_points1 = list(modules.get_points(text1))
@@ -209,7 +213,6 @@ eng_common_points_arinc_mvl = modules.compare_common_arinc(arinc_transformed_mvl
 
 eng_common_points_base = sorted(eng_common_points_base)
 eng_common_points_arinc = sorted(eng_common_points_arinc)
-
 
 update_points = list(modules.compare_coordinates(eng_common_points_arinc, eng_common_points_base))
 updated_points = list(modules.update_query(update_points))
@@ -452,7 +455,6 @@ international_names = list(modules.names(international))
 new_routes_int = sorted(list(set(names_routes_int) - set(international_names)))
 new_routes_mvl = sorted(list(set(names_routes_mvl) - set(rus_names)))
 
-
 with open('/multi_arinc/1.SINTEZ/3.Таблицы/new_routes_international.txt', 'w') as output:
     for item in new_routes_int:
         output.write("%s\n\n" % item)
@@ -566,10 +568,8 @@ for x in base_trass_point:
         if x[0] in old_doubles_names:
             get_mah.append(x)
 
-
 sorted_more2_int = list(modules.compare_mah(get_mah, more2_int))
 sorted_more2_mvl = list(modules.compare_mah(get_mah, more2_mvl))
-
 
 s = set([x[0] for x in sorted_more2_int])
 new_more_int = [x for x in more2_int if x not in s]
@@ -685,8 +685,6 @@ output_mvl = [(coords_mvl[q][1], coords_mvl[q + 1][1], coords_mvl[q + 1][0], coo
 results1 = list(modules.check(output_int, 30))
 results2 = list(modules.check(output_mvl, 30))
 
-Name = values.params[0]
-
 from_app = '***' + str(Name) + ' ' + str(datetime.datetime.today().year) + '-' + str(
     datetime.datetime.today().month) + '-' + str(datetime.datetime.today().day) + ' ' + str(
     datetime.datetime.today().hour) + ':' + str(datetime.datetime.today().minute) + ' Версия ARINC ' + version + '***'
@@ -792,7 +790,6 @@ points_list_2_2 = list(chain.from_iterable(points_list_2_2))
 po2 = points_list2 + points_list2_1 + points_list_2_2
 po2 = list(modules.unique(po2))
 points_list2 = author + first2 + second + po2
-
 
 with open('/multi_arinc/1.SINTEZ/2.SLD_картография/POINTS_W_AUTO.SLD', 'w') as output2:
     for item in points_list:
@@ -1797,4 +1794,4 @@ with open('/multi_arinc/1.SINTEZ/2.SLD_картография/DEL_DESW_MVL_AUTO.
 
 end_time = datetime.datetime.today()
 
-root.destroy()
+print('Разбор закончен')
