@@ -14,6 +14,7 @@ from importlib.machinery import SourceFileLoader
 from pathlib import Path
 import modules
 import operator
+import sys
 
 path = '/multi_arinc/config.py'
 module_name = 'config.py'
@@ -35,24 +36,27 @@ Name = input('Введите вашу фамилию на латинице: ')
 
 begin_time = datetime.datetime.today()
 
-pat = re.compile(r'(\d+)+?')
-version = pat.search(filename1).group()
-
 # Выбор нужного файла
 try:
     text1 = open('%s' % filename1, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до ARINC международных трасс")
+    sys.exit()
 
 try:
     text2 = open('%s' % filename2, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до ARINC МВЛьных трасс")
+    sys.exit()
 
 try:
     text3 = open('%s' % filename3, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до дампа базы KHABAR_ANI")
+    sys.exit()
+
+pat = re.compile(r'(\d+)+?')
+version = pat.search(filename1).group()
 
 logging.warning('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (filename1, filename2))
 print('_____НАЧАЛО_____Разбор файла ARINC %s и %s' % (filename1, filename2))

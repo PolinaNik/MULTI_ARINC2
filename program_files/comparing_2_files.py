@@ -1,5 +1,6 @@
 import datetime
 import modules
+import sys
 
 # Создаем окно приложения
 
@@ -13,16 +14,19 @@ try:
     text_old = open('%s' % filename1, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до старого ARINC международных трасс")
+    sys.exit()
 
 try:
     text_new = open('%s' % filename2, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до нового ARINC международных трасс")
+    sys.exit()
 
 try:
     text_dump = open('%s' % filename3, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до дампа базы KHABAR_ANI")
+    sys.exit()
 
 all_points_old = list(modules.get_points(text_old))
 all_points_new = list(modules.get_points(text_new))

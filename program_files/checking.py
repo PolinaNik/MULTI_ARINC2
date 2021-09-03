@@ -3,7 +3,6 @@
 from itertools import groupby
 from itertools import chain
 import datetime
-import os
 import modules
 import re
 

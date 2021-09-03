@@ -6,6 +6,7 @@ import datetime
 import modules
 from pathlib import Path
 import re
+import sys
 
 Path("/multi_arinc/3.ORL-A").mkdir(parents=True, exist_ok=True)
 
@@ -14,14 +15,15 @@ begin_time = datetime.datetime.today()
 
 print('_____НАЧАЛО_____Разбор файла ARINC %s' % filename)
 
-pat = re.compile(r'(\d+)+?')
-version = pat.search(filename).group()
-
 # Выбор нужного файла
 try:
     text = open('%s' % filename, 'r', encoding='utf-8').readlines()
 except:
     print("Неверно указан путь до ARINC международных трасс")
+    sys.exit()
+
+pat = re.compile(r'(\d+)+?')
+version = pat.search(filename).group()
 
 all_points = list(modules.get_points(text))
 
