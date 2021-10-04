@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 import sys
 
-Path("/multi_arinc/2.KORINF").mkdir(parents=True, exist_ok=True)
+Path("../2.KORINF").mkdir(parents=True, exist_ok=True)
 
 filename = input('Введите путь до ARINC международных трасс: ')
 begin_time = datetime.datetime.today()
@@ -294,56 +294,56 @@ trass_all = list(write_trass(pairs))
 
 trass_info = '0 Трассы\nЛиний 227; ПОДов 0; дуг 0; окружностей 0\nЛинии(индекс 2): всего 227\nID(2) начало конец тип цвет\n'
 
-RZ_info = open('./app/samples/sample_RZ.txt', 'r', encoding='utf-8')
+RZ_info = open('samples/sample_RZ.txt', 'r', encoding='utf-8')
 RZ_info = RZ_info.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'w', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'w', encoding='cp1251') as one:
     for i in RZ_info:
         one.write(i)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     one.write(trass_info)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     for i in trass_all:
         one.write('%s\n' % i)
 
 coridor_info1 = '0 Коридоры\nЛиний 1275; ПОДов 0; дуг 0; окружностей 0\nЛинии(индекс 2): всего 1275\nID(2) начало конец тип цвет\n'
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     one.write(coridor_info1)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     for i in coridor_all:
         one.write('%s\n' % i)
 
 polygon_info = '0 Коридоры заштрихованные\nЛиний 0; ПОДов 0; дуг 0; окружностей 0\n'
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     one.write(polygon_info)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+', encoding='cp1251') as one:
+with open('../2.KORINF/export.all', 'a+', encoding='cp1251') as one:
     for i in polygon_all:
         one.write('%s\n' % i)
 
-aero_info = open('./app/samples/sample_aero.txt', 'r', encoding='utf-8')
+aero_info = open('samples/sample_aero.txt', 'r', encoding='utf-8')
 aero_info = aero_info.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in aero_info:
         one.write(i)
 
-VC_info = open('./app/samples/sample_VC.txt', 'r')
+VC_info = open('samples/sample_VC.txt', 'r')
 VC_info = VC_info.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in VC_info:
         one.write(i)
 
-routes_info = open('./app/samples/sample_routes.txt', 'r')
+routes_info = open('samples/sample_routes.txt', 'r')
 routes_info = routes_info.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in routes_info:
         one.write(i)
 
@@ -406,36 +406,36 @@ pod_points_list2 = list(add_pod_points2(inside_points))
 # pdz_points_list = list(add_pod_points(pdz_points))
 # pdz_points_list2 = list(add_pod_points2(pdz_points))
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     one.write(pod_info)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in pod_points_list:
         one.write('%s\n' % i)
 
-# with open('/multi_arinc/2.KORINF/export.all' %config.korinf_map, 'a+', encoding='cp1251') as one:
+# with open('../2.KORINF/export.all' %config.korinf_map, 'a+', encoding='cp1251') as one:
 #     for i in pdz_points_list:
 #         one.write('%s\n' %i)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     one.write(pod_info2)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in pod_points_list2:
         one.write('%s\n' % i)
 
-# with open('/multi_arinc/2.KORINF/export.all' %config.korinf_map, 'a+', encoding='cp1251') as one:
+# with open('../2.KORINF/export.all' %config.korinf_map, 'a+', encoding='cp1251') as one:
 #     for i in pdz_points_list:
 #         one.write('%s\n' %i)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     one.write(points_info)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in list_points:
         one.write('%s\n' % i)
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in all_points_add:
         one.write('%s\n' % i)
 
@@ -457,41 +457,41 @@ def get_pdz_coords(lst):
 pod_coords = list(get_pod_coords(inside_points))
 # pdz_coords = list(get_pod_coords(pdz_points))
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in pod_coords:
         one.write('%s\n' % i)
 
 # pdz_coords = list(get_pdz_coords(pdz_points))
 
-# with open('/multi_arinc/2.KORINF/export.all' % config.korinf_map, 'a+', encoding='cp1251') as one:
+# with open('../2.KORINF/export.all' % config.korinf_map, 'a+', encoding='cp1251') as one:
 #     for i in pdz_coords:
 #         one.write('%s\n' %i)
 
-RZ_points = open('./app/samples/sample_RZ_points.txt', 'r')
+RZ_points = open('samples/sample_RZ_points.txt', 'r')
 RZ_points = RZ_points.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in RZ_points:
         one.write(i)
 
-aero_points = open('./app/samples/sample_aero_points.txt', 'r')
+aero_points = open('samples/sample_aero_points.txt', 'r')
 aero_points = aero_points.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in aero_points:
         one.write(i)
 
-VC_points = open('./app/samples/sample_VC_points.txt', 'r')
+VC_points = open('samples/sample_VC_points.txt', 'r')
 VC_points = VC_points.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in VC_points:
         one.write(i)
 
-routes_points = open('./app/samples/sample_routes_points.txt', 'r')
+routes_points = open('samples/sample_routes_points.txt', 'r')
 routes_points = routes_points.readlines()
 
-with open('/multi_arinc/2.KORINF/export.all', 'a+') as one:
+with open('../2.KORINF/export.all', 'a+') as one:
     for i in routes_points:
         one.write(i)
 
