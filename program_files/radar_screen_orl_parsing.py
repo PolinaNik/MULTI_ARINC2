@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import sys
 
-Path("../3.ORL-A").mkdir(parents=True, exist_ok=True)
+Path("3.ORL-A").mkdir(parents=True, exist_ok=True)
 
 filename = input('Введите путь до ARINC международных трасс: ')
 begin_time = datetime.datetime.today()
@@ -142,18 +142,18 @@ for i in range(len(routes_add)):
     new = ''.join(line)
     test.append(new)
 
-sample = open('samples/sample_radar.mp', 'r')
+sample = open('program_files/samples/sample_radar.mp', 'r')
 sample = sample.readlines()
 
 now = datetime.datetime.now()
 now = now.strftime("%d.%m.%Y")
 filename = 'map_' + now + '.mp'
 
-with open('%s%s' % ('../3.ORL-A/', filename), 'w') as r:
+with open('%s%s' % ('3.ORL-A/', filename), 'w') as r:
     for item in sample:
         r.write('%s' % item)
 
-with open('%s%s' % ('../3.ORL-A/', filename), 'a+') as r:
+with open('%s%s' % ('3.ORL-A/', filename), 'a+') as r:
     for item in test:
         r.write('%s\n' % item)
 
@@ -176,7 +176,7 @@ for i in range(len(points_add)):
     new = ''.join(line)
     test.append(new)
 
-with open('%s%s' % ('../3.ORL-A/', filename), 'a+') as r:
+with open('%s%s' % ('3.ORL-A/', filename), 'a+') as r:
     for item in test:
         r.write('%s\n' % item)
 

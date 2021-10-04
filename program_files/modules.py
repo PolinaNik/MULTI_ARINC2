@@ -7,7 +7,7 @@ from collections import defaultdict
 from itertools import groupby
 from importlib.machinery import SourceFileLoader
 
-path = '../config.py'
+path = 'config.py'
 module_name = 'config.py'
 loader = SourceFileLoader(module_name, path)
 config = loader.load_module()
